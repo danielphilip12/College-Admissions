@@ -1,12 +1,11 @@
 # College-Admissions
 
 ## Problem Statement
-- Provide a brief background or context for your analysis. Explain why the data is relevant or interesting.
+- This dataset contains information from various colleges in the United State, including the applications recieved, how many were accepted, graduation rates, student enrollment, etc. 
 
-- Clearly state the purpose of your analysis. What are you aiming to achieve or communicate through this analysis? Who would this benefit?
+- In this analysis and prediction modeling, I would like to predict how many students will enroll out of the number accepted. This would be able to help colleges/universities plan for the academic year by knowing how many new students they should expect to have enroll. 
 
 ## Data Dictionary
-Include a data dictionary to explain the meaning of each variable or field in the dataset. You can also link to an external data dictionary.
 
 | Column Name | Description |
 |-------------|-------------|
@@ -31,7 +30,11 @@ Include a data dictionary to explain the meaning of each variable or field in th
 ## Executive Summary
 
 ### Data Cleaning Steps
-Outline the steps taken to clean and preprocess the data before analysis.
+As a part of the data cleaning process, I renamed the columns to be lowercase and have '_' instead of '.' where applicable. I also renamed the column "Unnamed: 0" to "university". 
+
+Although at first glance there did not seem to be any missing values, the `PhD` column turned out to have '?' where there should be have been NaN values. There were 29 of these instances, and those values were converted to NaN and then subsequently dropped from the dataset, as there were relatively few of them. 
+
+There were also some entry errors it seems, with one row having the `PhD` value, which is a percent, of 103, and another row had a `Grad.Rate`, another percent, value of 118. As you cannot go above 100%, these rows were removed. 
 
 ### Key Visualizations
 Include key visualizations that highlight important aspects of the data. Use graphs, charts, or any other visual representation to make your points.
@@ -47,7 +50,19 @@ Include key visualizations that highlight important aspects of the data. Use gra
 ![Visualization 2](path/to/image2.png)
 
 ## Conclusions/Recommendations
-Summarize the main findings from your analysis. If applicable, provide recommendations based on the insights gained from the data.
+I trained multiple models to make predictions of how many students would enroll, namely, Linear Regression, Random Forest, and K Nearest Neighbors. 
+
+The results are below. 
+
+| Model | $R^2$ | RMSE |
+| ----- | ----- | ---- |
+| Linear Regression | 0.87 | 354 | 
+| Random Forest | 0.87 | 357 |
+| KNN | 0.86 | 380 |
+
+For KNN, I used different neighbors, distance equations, and weights by using a GridSearch, but ultimately, the best performing KNN model did not beat Linear Regression. 
+
+The Linear Regression model is able to explain 87% of the variability of the number of students enrolled, and, on average, accuratly predicts the number of enrolled students within 354 students. 
 
 ## Additional Information
 Include any additional information, references, or resources that might be relevant for understanding the analysis.
