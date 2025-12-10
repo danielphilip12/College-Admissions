@@ -37,17 +37,21 @@ Although at first glance there did not seem to be any missing values, the `PhD` 
 There were also some entry errors it seems, with one row having the `PhD` value, which is a percent, of 103, and another row had a `Grad.Rate`, another percent, value of 118. As you cannot go above 100%, these rows were removed. 
 
 ### Key Visualizations
-Include key visualizations that highlight important aspects of the data. Use graphs, charts, or any other visual representation to make your points.
 
-#### Visualization 1: [Title]
-[Description and interpretation of the first visualization.]
+#### Visualization 1: Percent of Accepted Students that Enrolled
+The below pie chart show what percent of students who were accepted actually enrolled to the school. We see that most students do not enroll in the school they were accepted at. This would make sense, as students probably apply, and get accepted to, multiple school, but can only attend one.
 
-![Visualization 1](path/to/image1.png)
+![Percent of Accepted Students that Enrolled](./images/accept_enroll.png)
 
-#### Visualization 2: [Title]
-[Description and interpretation of the second visualization.]
+#### Visualization 2: Applications Received by School Type
+We see that, on average, public school recieve more applications than private schools.
 
-![Visualization 2](path/to/image2.png)
+![Applications Received by School Type](./images/apps_school.png)
+
+#### Visualization 3: Acceptance Rate by School Type
+The below barplot shows the average acceptance rate of public and private schools. The acceptance rates for both are very close, but private schools have a higher average acceptance rate.
+
+![Acceptance Rate by School Type](./images/accept_school.png)
 
 ## Conclusions/Recommendations
 I trained multiple models to make predictions of how many students would enroll, namely, Linear Regression, Random Forest, and K Nearest Neighbors. 
@@ -65,10 +69,5 @@ For KNN, I used different neighbors, distance equations, and weights by using a 
 The Linear Regression model is able to explain 87% of the variability of the number of students enrolled, and, on average, accuratly predicts the number of enrolled students within 354 students. 
 
 ## Additional Information
-Include any additional information, references, or resources that might be relevant for understanding the analysis.
+Data comes from the [ISLR website](https://cran.r-project.org/web/packages/ISLR/ISLR.pdf) on page 5.
 
----
-
-Feel free to replace the placeholders with your actual content. Additionally, if you have images for your visualizations, make sure to replace the placeholder paths with the correct file paths or URLs.
-
-Once you've filled in the content, save the file with a `.md` extension (e.g., `README.md`). You can use this Markdown file on platforms like GitHub to provide a well-structured README for your analysis.
